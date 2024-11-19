@@ -70,16 +70,15 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
 
     return (
         <section id={id} className="py-12 bg-gradient-to-b from-white to-gray-50 shadow-lg rounded-lg">
-            <div className="w-full  px-6 lg:px-20 grid md:grid-cols-2 gap-10 items-start">
+            <div className="w-full px-4 sm:px-6 md:px-10 lg:px-20 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
                 {/* Left Section: Form */}
                 <div>
-                    <div className=" mb-8">
-                        <h1 className="text-3xl font-bold text-green-600 mb-4">
+                    <div className="mb-8">
+                        <h1 className="text-2xl sm:text-3xl font-bold text-green-600 mb-4">
                             Contact Us
                         </h1>
-                        <p className="text-xl text-gray-800">
-                            We'd love to hear from you! Please fill out the form below to get
-                            in touch.
+                        <p className="text-lg sm:text-xl text-gray-800">
+                            We'd love to hear from you! Please fill out the form below to get in touch.
                         </p>
                     </div>
 
@@ -88,9 +87,7 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                         {success && <div className="text-green-700 text-center font-bold">{success}</div>}
 
                         <div>
-                            <label className="block text-green-700 font-semibold mb-1">
-                                Full Name
-                            </label>
+                            <label className="block text-green-700 font-semibold mb-1">Full Name</label>
                             <input
                                 type="text"
                                 name="fullName"
@@ -101,10 +98,9 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                                 required
                             />
                         </div>
+                        {/* Additional Input Fields (unchanged) */}
                         <div>
-                            <label className="block text-green-700 font-semibold mb-1">
-                                Phone Number
-                            </label>
+                            <label className="block text-green-700 font-semibold mb-1">Phone Number</label>
                             <input
                                 type="text"
                                 name="phoneNumber"
@@ -181,11 +177,10 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                         </button>
                     </form>
                 </div>
+
                 {/* Right Section: Company Info */}
                 <div className="bg-white p-6 rounded-lg shadow-md">
-                    <h2 className="text-3xl font-bold text-green-600 mb-4">
-                        Information
-                    </h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-green-600 mb-4">Information</h2>
                     <p className="text-gray-800 mb-4 flex items-center gap-2">
                         <CiLocationOn className="text-green-600" />
                         <strong>Address:</strong> 46 Nadi Al Saeed St. , Dokki, Giza, Egypt
@@ -194,29 +189,19 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                         <FaPhoneAlt className="text-green-600" />
                         <strong>Phone:</strong> (+20) 2 376 146 82 - (+20) 2 374 996 36
                     </p>
-                    <p className="text-gray-800 mb-6">
-                        Scan the QR code below to save our contact information:
-                    </p>
                     <div className="flex justify-center">
                         <img
                             src="/QR.png" // Replace with the actual path to your QR code image
                             alt="Company QR Code"
-                            className="w-40 h-40 object-contain border-4 border-green-600 rounded-lg"
+                            className="w-32 h-32 sm:w-40 sm:h-40 object-contain border-4 border-green-600 rounded-lg"
                         />
                     </div>
-                    <div className="flex gap-20 justify-center space-x-6 mt-6">
-                        {/* <a href="https://facebook.com/kids.coder" target="_blank" className="text-gray-800 text-3xl hover:text-green-600 transition duration-300">
-          <FaFacebook />
-        </a> */}
-                        {/* <a href="https://x.com/kids.coder" target="_blank" className="text-gray-800 text-3xl hover:text-green-600 transition duration-300">
-          <BsTwitterX />
-        </a> */}
-
-                        <a href="https://linkedin.com" target="_blank" className="text-gray-800 text-3xl hover:text-green-600 transition duration-300">
-                        <FaLinkedin />
+                    <div className="flex flex-wrap gap-7 justify-center mt-6">
+                        <a href="https://linkedin.com" target="_blank" className="text-gray-800 text-2xl sm:text-3xl hover:text-green-600 transition duration-300">
+                            <FaLinkedin />
                         </a>
                         <a href="mailto:Michael.Barsoum@techtradeegypt.com" aria-label="Contact Us">
-                            <AiOutlineMail className="text-gray-800 text-3xl hover:text-green-600 transition duration-300" />
+                            <AiOutlineMail className="text-gray-800 text-2xl sm:text-3xl hover:text-green-600 transition duration-300" />
                         </a>
                         <a
                             className="mx-2"
@@ -225,15 +210,16 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                             rel="noopener noreferrer"
                             aria-label="WhatsApp"
                         >
-                            <FaWhatsapp className="text-gray-800 text-3xl hover:text-green-600 transition duration-300" />
+                            <FaWhatsapp className="text-gray-800 text-2xl sm:text-3xl hover:text-green-600 transition duration-300" />
                         </a>
                         <a href="tel:(+20) 2 376 168 40" aria-label="Phone">
-                            <FaPhoneAlt className="text-gray-800 text-3xl hover:text-green-600 transition duration-300" />
+                            <FaPhoneAlt className="text-gray-800 text-2xl sm:text-3xl hover:text-green-600 transition duration-300" />
                         </a>
                     </div>
                 </div>
             </div>
         </section>
+
     );
 };
 
