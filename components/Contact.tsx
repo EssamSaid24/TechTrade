@@ -1,8 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import { FaPhoneAlt, FaWhatsapp, FaLinkedin } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
+import { CiLocationOn } from "react-icons/ci";
+
 
 interface FormProps {
     id: string;
@@ -11,10 +13,11 @@ interface FormProps {
 const FormComponent: React.FC<FormProps> = ({ id }) => {
     const [formData, setFormData] = useState({
         fullName: "",
-        childAge: "",
+        Subject: "",
         email: "",
         phoneNumber: "",
         message: "",
+        Company: "",
     });
 
     const [loading, setLoading] = useState(false);
@@ -51,10 +54,11 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
             setSuccess("Message sent successfully!");
             setFormData({
                 fullName: "",
-                childAge: "",
+                Subject: "",
                 email: "",
                 phoneNumber: "",
                 message: "",
+                Company: "",
             });
         } catch (error) {
             console.error("EmailJS Error:", error);
@@ -125,21 +129,16 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                                 required
                             />
                         </div>
-
-
-
-
-
                         <div>
                             <label className="block text-green-700 font-semibold mb-1">
                                 Company
                             </label>
                             <input
                                 type="text"
-                                name="phoneNumber"
+                                name="Company"
                                 placeholder="Enter your company name"
                                 className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
-                                value={formData.phoneNumber}
+                                value={formData.Company}
                                 onChange={handleChange}
                                 required
                             />
@@ -150,10 +149,10 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                             </label>
                             <input
                                 type="text"
-                                name="phoneNumber"
+                                name="Subject"
                                 placeholder="Enter your subject"
                                 className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
-                                value={formData.phoneNumber}
+                                value={formData.Subject}
                                 onChange={handleChange}
                                 required
                             />
@@ -172,7 +171,6 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                                 required
                             />
                         </div>
-
                         <button
                             type="submit"
                             disabled={loading}
@@ -183,18 +181,18 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                         </button>
                     </form>
                 </div>
-
                 {/* Right Section: Company Info */}
                 <div className="bg-white p-6 rounded-lg shadow-md">
                     <h2 className="text-3xl font-bold text-green-600 mb-4">
-                        Company Information
+                        Information
                     </h2>
-                    <p className="text-gray-800 mb-4">
-                        <strong>Address:</strong> 123 Green Valley Road, Cityville, Country
+                    <p className="text-gray-800 mb-4 flex items-center gap-2">
+                        <CiLocationOn className="text-green-600" />
+                        <strong>Address:</strong> 46 Nadi Al Saeed St. , Dokki, Giza, Egypt
                     </p>
                     <p className="text-gray-800 mb-4 flex items-center gap-2">
                         <FaPhoneAlt className="text-green-600" />
-                        <strong>Phone:</strong> +1 (234) 567-890
+                        <strong>Phone:</strong> (+20) 2 376 146 82 - (+20) 2 374 996 36
                     </p>
                     <p className="text-gray-800 mb-6">
                         Scan the QR code below to save our contact information:
@@ -214,10 +212,10 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
           <BsTwitterX />
         </a> */}
 
-                        {/* <a href="https://linkedin.com" target="_blank" className="text-gray-800 text-3xl hover:text-green-600 transition duration-300">
-          <FaLinkedin />
-        </a> */}
-                        <a href="mailto:kidscoders1@gmail.com" aria-label="Contact Us">
+                        <a href="https://linkedin.com" target="_blank" className="text-gray-800 text-3xl hover:text-green-600 transition duration-300">
+                        <FaLinkedin />
+                        </a>
+                        <a href="mailto:Michael.Barsoum@techtradeegypt.com" aria-label="Contact Us">
                             <AiOutlineMail className="text-gray-800 text-3xl hover:text-green-600 transition duration-300" />
                         </a>
                         <a
@@ -227,11 +225,9 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                             rel="noopener noreferrer"
                             aria-label="WhatsApp"
                         >
-
                             <FaWhatsapp className="text-gray-800 text-3xl hover:text-green-600 transition duration-300" />
                         </a>
-
-                        <a href="tel:+0597765376" aria-label="Phone">
+                        <a href="tel:(+20) 2 376 168 40" aria-label="Phone">
                             <FaPhoneAlt className="text-gray-800 text-3xl hover:text-green-600 transition duration-300" />
                         </a>
                     </div>
