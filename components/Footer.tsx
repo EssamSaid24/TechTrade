@@ -46,7 +46,7 @@ const Footer = () => {
                 <div className="flex items-center gap-6">
                     {/* LinkedIn Icon */}
                     <a
-                        href="https://linkedin.com"
+                        href="https://eg.linkedin.com/company/techtradeegypt"
                         target="_blank"
                         className="text-slate-100 text-opacity-60 text-3xl hover:text-green-600 transition duration-300"
                         aria-label="LinkedIn"
@@ -95,7 +95,7 @@ const Footer = () => {
                 {/* Social Media and Contact */}
                 <div className="flex justify-center gap-6">
                     <a
-                        href="https://linkedin.com"
+                        href="https://eg.linkedin.com/company/techtradeegypt"
                         target="_blank"
                         className="text-slate-100 text-opacity-80 text-3xl hover:text-green-600 transition duration-300"
                         aria-label="LinkedIn"

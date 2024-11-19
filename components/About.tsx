@@ -10,7 +10,7 @@ const AboutUsSection: React.FC = () => {
                 background: "linear-gradient(to right, #5d8551, #207408)", // Gradient colors
             }}
         >
-                <h1 className="relative text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold ">
+                <h1 className="relative lg:w-1/2 text-center lg:text-left text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold ">
                     About us
                 </h1>
             </div>

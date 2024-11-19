@@ -197,15 +197,15 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                         />
                     </div>
                     <div className="flex flex-wrap gap-7 justify-center mt-6">
-                        <a href="https://linkedin.com" target="_blank" className="text-gray-800 text-2xl sm:text-3xl hover:text-green-600 transition duration-300">
+                        <a href="https://eg.linkedin.com/company/techtradeegypt" target="_blank" className="text-gray-800 text-2xl sm:text-3xl hover:text-green-600 transition duration-300">
                             <FaLinkedin />
                         </a>
-                        <a href="mailto:Michael.Barsoum@techtradeegypt.com" aria-label="Contact Us">
+                        <a href="mailto:mail@techtradeegypt.com" aria-label="Contact Us">
                             <AiOutlineMail className="text-gray-800 text-2xl sm:text-3xl hover:text-green-600 transition duration-300" />
                         </a>
                         <a
                             className="mx-2"
-                            href="https://wa.me/966597765376"
+                            href="https://wa.me/"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="WhatsApp"
