@@ -17,7 +17,9 @@ export default function Home() {
       <Navbar></Navbar>
       <Banner></Banner>
       <TwoPictures></TwoPictures>
-      <About></About>
+      <div className="h-screen">
+      <About />
+      </div>
       <Contact id={""}></Contact>
       <PartnersSection></PartnersSection>
       <Footer></Footer>

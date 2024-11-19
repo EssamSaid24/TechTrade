@@ -16,3 +16,11 @@
   display: flex;
   width: max-content;
 }
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); /* Scroll by half the duplicated content */
+  }
+}

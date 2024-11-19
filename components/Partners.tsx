@@ -14,24 +14,29 @@ const PartnersSection: React.FC = () => {
     { id: 4, src: "/13.png", alt: "DCL Logo" },
     { id: 5, src: "/14.png", alt: "MLT Group Logo" },
     { id: 6, src: "/15.png", alt: "Chemulc Logo" },
-    { id: 8, src: "/17.png", alt: "Gurtec Logo" },
-    { id: 9, src: "/18.png", alt: "Muller Beltex Logo" },
-    { id: 10, src: "/19.png", alt: "DCL Logo" },
+    { id: 7, src: "/17.png", alt: "Gurtec Logo" },
+    { id: 8, src: "/18.png", alt: "Muller Beltex Logo" },
+    { id: 9, src: "/19.png", alt: "DCL Logo" },
   ];
 
   return (
     <div
-    className="relative text-center py-12"
-    style={{
+      className="relative text-center py-12"
+      style={{
         background: "linear-gradient(to right, #5d8551, #207408)", // Gradient colors
         clipPath: "ellipse(90% 100% at 50% 0%)", // Wide circle at the bottom
-    }}
-    >      
+      }}
+    >
       <h2 className="text-white text-5xl font-bold mb-8">Our Partners</h2>
-      <div className="overflow-hidden">
-        <div className="flex gap-8 animate-scroll">
+      <div className="overflow-hidden relative">
+        <div
+          className="flex gap-8 animate-scroll whitespace-nowrap"
+        >
           {[...partners, ...partners].map((partner, index) => (
-            <div key={`${partner.id}-${index}`} className="w-44 flex justify-center items-center">
+            <div
+              key={`${partner.id}-${index}`}
+              className="w-44 flex justify-center items-center"
+            >
               <img
                 src={partner.src}
                 alt={partner.alt}
