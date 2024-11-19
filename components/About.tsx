@@ -2,16 +2,15 @@ import React from "react";
 
 const AboutUsSection: React.FC = () => {
     return (
-        <div className="mt-1 relative h-full bg-gray-100">
+        <div className=" relative h-full bg-gray-100">
             {/* Top Section with Title */}
             <div
-                className="relative px-4 sm:px-8 md:px-16 lg:px-20 py-6 sm:py-8 bg-cover bg-center"
-                style={{
-                    backgroundImage: "url('/100.jpg')", // Replace with your image path
-                }}
-            >
-                <div className="absolute inset-0 bg-black opacity-80"></div>
-                <h1 className="relative text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center">
+            className="relative  py-4 px-20"
+            style={{
+                background: "linear-gradient(to right, #5d8551, #207408)", // Gradient colors
+            }}
+        >
+                <h1 className="relative text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold ">
                     About us
                 </h1>
             </div>
