@@ -45,7 +45,7 @@ const Banner: React.FC = () => {
                         letterSpacing: "1px",
                     }}
                 >
-                    Leading Your Busniess 
+                    The purpose of business 
                     
                                     </h1>
                 <h1
@@ -56,7 +56,7 @@ const Banner: React.FC = () => {
                         letterSpacing: "1px",
                     }}
                 >
-                    To Evident Success
+                    is to create and keep a customer
                 </h1>
 
             </div>

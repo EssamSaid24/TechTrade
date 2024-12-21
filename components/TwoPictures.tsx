@@ -4,13 +4,13 @@ import React, { useState, useEffect } from "react";
 const imagesWithText = [
     {
         image: "/8.jpeg",
-        title: "Industrial Field",
-        subtitle: "Conquer leaderboards, crush workouts, create with friends and more. Get lost in a growing library of VR classics and all-new experiences.",
+        title: "In the industrial world, success is earned through dedication, adaptability, and vision.",
+        subtitle: "We specialize in a diverse range of industrial fields, offering advanced solutions that enhance operational efficiency and foster innovation. With deep expertise in key sectors, we are committed to helping businesses optimize their processes, reduce costs, and achieve sustainable growth.",
     },
     {
         image: "/9.jpeg",
-        title: "Aviation Field",
-        subtitle: "We are a forum for the exchange of some of the most important ideas and issues facing the world of aviation. This is a place to explore, learn, share and debate. Don't hold back, we want to know what you think. We have a few ideas.",
+        title: "In aviation, it's not about how high you can fly, but how safely you can land.",
+        subtitle: "we specialize in providing high-quality aviation parts, equipment, and solutions. With a focus on reliability and compliance, we supply essential components for aircraft maintenance, safety, and performance. Our team ensures that all products meet industry standards and regulations, helping to keep aviation operations running smoothly and safely.",
     },
 ];
 
@@ -46,8 +46,8 @@ const TwoPictures: React.FC = () => {
                     {/* Text Content */}
                     <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4">
                         <h1
-                            className={`font-bold ${
-                                isMobile ? "text-3xl" : "text-5xl"
+                            className={`font-bold  ${
+                                isMobile ? "text-3xl" : "text-3xl"
                             }`}
                             style={{
                                 textShadow: "2px 2px 8px rgba(0, 0, 0, 0.7)",
