@@ -183,18 +183,24 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                     <h2 className="text-2xl sm:text-3xl font-bold text-green-600 mb-4">Information</h2>
                     <p className="text-gray-800 mb-4 flex items-center gap-2">
                         <CiLocationOn className="text-green-600" />
-                        <strong>Address:</strong> 46 Nadi Al Saeed St. , Dokki, Giza, Egypt
+                        <strong>Address:</strong> 46 Nadi Al Saeed St., Dokki, Giza, Egypt
                     </p>
                     <p className="text-gray-800 mb-4 flex items-center gap-2">
                         <FaPhoneAlt className="text-green-600" />
                         <strong>Phone:</strong> (+20) 2 376 146 82 - (+20) 2 374 996 36
                     </p>
                     <div className="flex justify-center">
-                        <img
-                            src="/QR.png" // Replace with the actual path to your QR code image
-                            alt="Company QR Code"
-                            className="w-32 h-32 sm:w-40 sm:h-40 object-contain border-4 border-green-600 rounded-lg"
-                        />
+                        {/* Embedded Google Map */}
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.123456789!2d31.20009231563359!3d30.03745665489492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145847766db67e67%3A0x2345abcd1234abcd!2s46%20Nadi%20Al%20Saeed%20St.%2C%20Dokki%2C%20Giza%2C%20Egypt!5e0!3m2!1sen!2seg!4v1676845555555"
+                            width="100%"
+                            height="300"
+                            style={{ border: 0 }}
+                            allowFullScreen={true}
+                            loading="lazy"
+                            className="rounded-md shadow-md"
+                            title="Company Location"
+                        ></iframe>
                     </div>
                     <div className="flex flex-wrap gap-7 justify-center mt-6">
                         <a href="https://eg.linkedin.com/company/techtradeegypt" target="_blank" className="text-gray-800 text-2xl sm:text-3xl hover:text-green-600 transition duration-300">
@@ -217,6 +223,7 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                         </a>
                     </div>
                 </div>
+
             </div>
         </section>
 

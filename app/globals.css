@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Karla:ital,wght@0,200..800;1,200..800&family=Reem+Kufi:wght@400..700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: "Amiri", serif;
+}
 @keyframes scroll {
   0% {
     transform: translateX(0%);
@@ -24,3 +28,4 @@
     transform: translateX(-50%); /* Scroll by half the duplicated content */
   }
 }
+
