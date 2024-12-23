@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
-const backgroundImages: string[] = ["/7.jpeg"];
+const backgroundImages: string[] = ["/777.png"];
 
 const Banner: React.FC = () => {
     const [isMobile, setIsMobile] = useState<boolean>(false);
