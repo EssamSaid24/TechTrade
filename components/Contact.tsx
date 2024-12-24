@@ -174,15 +174,13 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                         ></iframe>
                     </div>
                     <div className="flex flex-wrap gap-7 justify-center mt-6">
-                        <a href="https://eg.linkedin.com/company/techtradeegypt" target="_blank" className="text-gray-800 text-2xl sm:text-3xl hover:text-green-600 transition duration-300">
-                            <FaLinkedin />
-                        </a>
+
                         <a href="mailto:mail@techtradeegypt.com" aria-label="Contact Us">
                             <AiOutlineMail className="text-gray-800 text-2xl sm:text-3xl hover:text-green-600 transition duration-300" />
                         </a>
                         <a
                             className="mx-2"
-                            href="https://wa.me/"
+                            href="https://wa.me/01282263319"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="WhatsApp"

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -45,14 +44,7 @@ const Footer = () => {
                 {/* Social Media and Contact */}
                 <div className="flex items-center gap-6">
                     {/* LinkedIn Icon */}
-                    <a
-                        href="https://eg.linkedin.com/company/techtradeegypt"
-                        target="_blank"
-                        className="text-slate-100 text-opacity-60 text-3xl hover:text-green-600 transition duration-300"
-                        aria-label="LinkedIn"
-                    >
-                        <FaLinkedin />
-                    </a>
+
                     {/* Contact Us Link */}
                     <Link
                         href="/#contact"
@@ -94,14 +86,7 @@ const Footer = () => {
 
                 {/* Social Media and Contact */}
                 <div className="flex justify-center gap-6">
-                    <a
-                        href="https://eg.linkedin.com/company/techtradeegypt"
-                        target="_blank"
-                        className="text-slate-100 text-opacity-80 text-3xl hover:text-green-600 transition duration-300"
-                        aria-label="LinkedIn"
-                    >
-                        <FaLinkedin />
-                    </a>
+
                     <Link
                         href="/#contact"
                         className="px-4 py-2 text-slate-100 text-opacity-80 font-bold rounded hover:bg-green-600 transition duration-300"

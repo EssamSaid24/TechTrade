@@ -17,6 +17,10 @@ const PartnersSection: React.FC = () => {
     { id: 7, src: "/17.png", alt: "Gurtec Logo" },
     { id: 8, src: "/18.png", alt: "Muller Beltex Logo" },
     { id: 9, src: "/19.png", alt: "DCL Logo" },
+    { id: 10, src: "/20.png", alt: "Chemulc Logo" },
+    { id: 11, src: "/21.png", alt: "Gurtec Logo" },
+    { id: 12, src: "/22.png", alt: "Muller Beltex Logo" },
+    { id: 13, src: "/23.png", alt: "DCL Logo" },
   ];
 
   return (
