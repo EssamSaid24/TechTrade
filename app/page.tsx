@@ -4,6 +4,9 @@ import PartnersSection from "../components/Partners";
 import About from "../components/About";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import WhyChooseUs from "../components/WhyChooseUs";
+import Services from "../components/Services";
+
 
 export default function Home() {
   return (
@@ -17,8 +20,9 @@ export default function Home() {
 
         {/* About Section */}
         <About />
-
+        <WhyChooseUs></WhyChooseUs>
         {/* Remaining Sections */}
+        <Services></Services>
         <div className="h-full">
           <Contact id={""} />
         </div>
