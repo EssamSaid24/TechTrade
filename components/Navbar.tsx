@@ -71,6 +71,12 @@ const Navbar = () => {
                     >
                         About
                     </Link>
+                    <Link
+                        href="/#about"
+                        className="text-gray-700 hover:text-black  transition duration-300"
+                    >
+                        Services
+                    </Link>
                 </div>
 
                 {/* Logo */}

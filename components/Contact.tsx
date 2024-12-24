@@ -5,7 +5,6 @@ import { FaPhoneAlt, FaWhatsapp, FaLinkedin } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { CiLocationOn } from "react-icons/ci";
 
-
 interface FormProps {
     id: string;
 }
@@ -16,8 +15,7 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
         Subject: "",
         email: "",
         phoneNumber: "",
-        comment:""
-
+        comment: "",
     });
 
     const [loading, setLoading] = useState(false);
@@ -57,8 +55,7 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                 Subject: "",
                 email: "",
                 phoneNumber: "",
-                comment:""
-
+                comment: "",
             });
         } catch (error) {
             console.error("EmailJS Error:", error);
@@ -70,14 +67,15 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
 
     return (
         <section id={id} className="py-12 bg-gradient-to-b from-white to-gray-50 shadow-lg rounded-lg">
-            <div className="w-full px-4 sm:px-6 md:px-10 lg:px-20 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+            <div className="w-full px-4 sm:px-6 md:px-10 lg:px-20 grid grid-cols-1 lg:grid-cols-1 gap-6 items-start">
                 {/* Left Section: Form */}
                 <div>
                     <div className="mb-8">
-                        <h1 className="text-2xl sm:text-3xl font-bold text-green-600 mb-4">
-                            Contact Us
-                        </h1>
-                        <p className="text-lg sm:text-xl text-gray-800">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl font-bold text-gray-900 mb-2">Contact Us</h2>
+                            <div className="h-1 w-16 bg-green-600 mx-auto"></div>
+                        </div>
+                        <p className="text-lg sm:text-xl text-center text-gray-800">
                             We'd love to hear from you! Please fill out the form below to get in touch.
                         </p>
                     </div>
@@ -86,58 +84,58 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                         {error && <div className="text-red-500 text-center font-bold">{error}</div>}
                         {success && <div className="text-green-700 text-center font-bold">{success}</div>}
 
-                        <div>
-                            <label className="block text-green-700 font-semibold mb-1">Full Name</label>
-                            <input
-                                type="text"
-                                name="fullName"
-                                placeholder="Enter your full name"
-                                className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
-                                value={formData.fullName}
-                                onChange={handleChange}
-                                required
-                            />
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label className="block text-green-700 font-semibold mb-1">Full Name</label>
+                                <input
+                                    type="text"
+                                    name="fullName"
+                                    placeholder="Enter your full name"
+                                    className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
+                                    value={formData.fullName}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-green-700 font-semibold mb-1">Phone Number</label>
+                                <input
+                                    type="text"
+                                    name="phoneNumber"
+                                    placeholder="Enter your phone number"
+                                    className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
+                                    value={formData.phoneNumber}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
                         </div>
-                        {/* Additional Input Fields (unchanged) */}
-                        <div>
-                            <label className="block text-green-700 font-semibold mb-1">Phone Number</label>
-                            <input
-                                type="text"
-                                name="phoneNumber"
-                                placeholder="Enter your phone number"
-                                className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
-                                value={formData.phoneNumber}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label className="block text-green-700 font-semibold mb-1">
-                                Email
-                            </label>
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="Enter your email"
-                                className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
-                                value={formData.email}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label className="block text-green-700 font-semibold mb-1">
-                                Comment
-                            </label>
-                            <input
-                                type="text"
-                                name="comment"
-                                placeholder="Enter your comment"
-                                className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
-                                value={formData.comment}
-                                onChange={handleChange}
-                                required
-                            />
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label className="block text-green-700 font-semibold mb-1">Email</label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Enter your email"
+                                    className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-green-700 font-semibold mb-1">Comment</label>
+                                <input
+                                    type="text"
+                                    name="comment"
+                                    placeholder="Enter your comment"
+                                    className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
+                                    value={formData.comment}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
                         </div>
 
                         <button
@@ -146,7 +144,7 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                             className={`w-full bg-green-600 text-white py-2 rounded-md font-bold transition ${loading ? "bg-green-300 cursor-not-allowed" : "hover:bg-green-600"
                                 }`}
                         >
-                            {loading ? "Sending..." : "Submit"}
+                            {loading ? "Sending..." : "Contact"}
                         </button>
                     </form>
                 </div>
@@ -199,7 +197,6 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
 
             </div>
         </section>
-
     );
 };
 

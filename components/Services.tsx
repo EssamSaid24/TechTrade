@@ -54,7 +54,7 @@ const Services: React.FC = () => {
                 </div>
 
                 {/* Service Item 3 */}
-                <div className="flex items-center hover:border-4 hover:border-green-500 p-4 rounded-lg transition-all duration-300">
+                <div className="flex items-center hover:border-4 hover:border-green-600 p-4 rounded-lg transition-all duration-200">
                     <div className="w-1/3">
                         <img
                             src="/500.jpg" // Replace with your image path
