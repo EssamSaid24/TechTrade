@@ -16,8 +16,8 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
         Subject: "",
         email: "",
         phoneNumber: "",
-        message: "",
-        Company: "",
+        comment:""
+
     });
 
     const [loading, setLoading] = useState(false);
@@ -57,8 +57,8 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                 Subject: "",
                 email: "",
                 phoneNumber: "",
-                message: "",
-                Company: "",
+                comment:""
+
             });
         } catch (error) {
             console.error("EmailJS Error:", error);
@@ -127,46 +127,19 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                         </div>
                         <div>
                             <label className="block text-green-700 font-semibold mb-1">
-                                Company
+                                Comment
                             </label>
                             <input
                                 type="text"
-                                name="Company"
-                                placeholder="Enter your company name"
+                                name="comment"
+                                placeholder="Enter your comment"
                                 className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
-                                value={formData.Company}
+                                value={formData.comment}
                                 onChange={handleChange}
                                 required
                             />
                         </div>
-                        <div>
-                            <label className="block text-green-700 font-semibold mb-1">
-                                Subject
-                            </label>
-                            <input
-                                type="text"
-                                name="Subject"
-                                placeholder="Enter your subject"
-                                className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
-                                value={formData.Subject}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label className="block text-green-700 font-semibold mb-1">
-                                Question
-                            </label>
-                            <input
-                                type="text"
-                                name="message"
-                                placeholder="Enter your question"
-                                className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
-                                value={formData.message}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
+
                         <button
                             type="submit"
                             disabled={loading}
