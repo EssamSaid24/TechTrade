@@ -1,64 +1,45 @@
+// Banner.tsx
 "use client";
 import React, { useState, useEffect } from "react";
 
 const backgroundImages: string[] = ["/777.png"];
 
 const Banner: React.FC = () => {
-    const [isMobile, setIsMobile] = useState<boolean>(false);
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [offsetY, setOffsetY] = useState(0);
+
+    const handleScroll = () => {
+        setOffsetY(window.scrollY);
+    };
 
     useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768);
-        };
-
-        handleResize();
-        window.addEventListener("resize", handleResize);
-
+        window.addEventListener("scroll", handleScroll);
         return () => {
-            window.removeEventListener("resize", handleResize);
+            window.removeEventListener("scroll", handleScroll);
         };
     }, []);
 
-
-
     return (
-        <div className="w-full h-full relative">
-            {/* Background Image */}
+        <div className="relative w-full h-screen overflow-hidden">
+            {/* Parallax Background Image */}
             <div
-                className="absolute inset-0 w-full h-full bg-center bg-no-repeat bg-cover text-white transition-all duration-700"
+                className="absolute inset-0 w-full h-full bg-center bg-cover bg-no-repeat"
                 style={{
-                    backgroundImage: `url(${backgroundImages[currentIndex]})`,
+                    backgroundImage: `url(${backgroundImages[0]})`,
+                    transform: `translateY(${offsetY * 0.5}px)`, // Adjust this multiplier for stronger or weaker parallax
                 }}
             ></div>
 
             {/* Dark Overlay for Text Readability */}
             <div className="absolute inset-0 bg-black opacity-60"></div>
 
-            <div className="relative h-screen max-w-screen-2xl  pt-28 mx-auto flex flex-col text-white text-center items-center">
-                {/* Title and Main Text */}
-                <h1
-                    className={`mt-9 font-bold ${isMobile ? "text-3xl" : "text-5xl"}`}
-                    style={{
-                        lineHeight: "1",
-                        textShadow: "2px 2px 8px rgba(0, 0, 0, 0.7)",
-                        letterSpacing: "1px",
-                    }}
-                >
-                    The purpose of business 
-                    
-                                    </h1>
-                <h1
-                    className={`mt-9 font-bold ${isMobile ? "text-3xl" : "text-5xl"}`}
-                    style={{
-                        lineHeight: "1",
-                        textShadow: "2px 2px 8px rgba(0, 0, 0, 0.7)",
-                        letterSpacing: "1px",
-                    }}
-                >
-                    is to create and keep a customer
+            {/* Content */}
+            <div className="relative z-10 flex flex-col justify-center items-center h-full text-center text-white">
+                <h1 className="text-5xl font-bold drop-shadow-lg">
+                    The purpose of business
                 </h1>
-
+                <h2 className="text-3xl font-semibold mt-4 drop-shadow-lg">
+                    is to create and keep a customer
+                </h2>
             </div>
         </div>
     );

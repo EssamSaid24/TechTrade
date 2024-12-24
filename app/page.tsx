@@ -1,31 +1,30 @@
-import TwoPictures from "../components/TwoPictures";
 import Banner from "../components/Banner";
 import Navbar from "../components/Navbar";
-import Image from "next/image";
 import PartnersSection from "../components/Partners";
 import About from "../components/About";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
-
-
-
 export default function Home() {
   return (
-    <div className="w-full items-center justify-center">
+    <>
+      <div className="w-full">
+        {/* Navbar */}
+        <Navbar />
 
-      <Navbar></Navbar>
-      <Banner></Banner>
-      <TwoPictures></TwoPictures>
-      <div className="h-screen">
-      <About />
+        {/* Banner */}
+        <Banner />
+
+        {/* About Section */}
+        <About />
+
+        {/* Remaining Sections */}
+        <div className="h-full">
+          <Contact id={""} />
+        </div>
+        <PartnersSection />
+        <Footer />
       </div>
-      <Contact id={""}></Contact>
-      <PartnersSection></PartnersSection>
-      <Footer></Footer>
-
-    </div>
-
-
+    </>
   );
 }
