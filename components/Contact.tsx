@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { FaPhoneAlt, FaWhatsapp, FaLinkedin } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
@@ -9,35 +9,84 @@ interface FormProps {
     id: string;
 }
 
+interface FormData {
+    fullName: string;
+    subject: string;
+    email: string;
+    phoneNumber: string;
+    comment: string;
+}
+
 const FormComponent: React.FC<FormProps> = ({ id }) => {
-    const [formData, setFormData] = useState({
+    const [showFeatures, setShowFeatures] = useState(false);
+    const [scrollOffset, setScrollOffset] = useState(0);
+    const featuresRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        // Scroll listener to track the scroll position
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            setScrollOffset(scrollY); // Update scroll position
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            const [entry] = entries;
+            if (entry.isIntersecting) {
+                setShowFeatures(true);
+                observer.unobserve(entry.target);
+            }
+        }, { threshold: 0.5 });  // 50% visibility to trigger animation
+
+        if (featuresRef.current) {
+            observer.observe(featuresRef.current);
+        }
+
+        return () => {
+            if (featuresRef.current) {
+                observer.unobserve(featuresRef.current);
+            }
+        };
+    }, []);
+
+    const containerStyle = {
+        marginTop: showFeatures ? "50px" : "0",
+        opacity: showFeatures ? "1" : "0",
+        transition: "margin-top 1000ms ease-out, opacity 400ms ease-out", // smoother transition
+        transform: `translateY(-${scrollOffset * 0.07}px)`, // Move the component upwards as the user scrolls
+    };
+
+    const [formData, setFormData] = useState<FormData>({
         fullName: "",
-        Subject: "",
+        subject: "",
         email: "",
         phoneNumber: "",
         comment: "",
     });
 
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState("");
-    const [success, setSuccess] = useState("");
+    const [message, setMessage] = useState<string>("");
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
-    const validateEmail = (email: string) =>
-        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setLoading(true);
-        setError("");
-        setSuccess("");
+        setMessage("");
 
         if (!validateEmail(formData.email)) {
-            setError("Please enter a valid email address.");
+            setMessage("Please enter a valid email address.");
             setLoading(false);
             return;
         }
@@ -46,28 +95,31 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
             await emailjs.send(
                 "your_service_id", // Replace with your EmailJS service ID
                 "your_template_id", // Replace with your EmailJS template ID
-                formData,
-                "your_user_id" // Replace with your EmailJS user ID
             );
-            setSuccess("Message sent successfully!");
+            setMessage("Message sent successfully!");
             setFormData({
                 fullName: "",
-                Subject: "",
+                subject: "",
                 email: "",
                 phoneNumber: "",
                 comment: "",
             });
         } catch (error) {
             console.error("EmailJS Error:", error);
-            setError("Failed to send message. Please try again later.");
+            setMessage("Failed to send message. Please try again later.");
         } finally {
             setLoading(false);
         }
     };
 
     return (
-        <section id={id} className="py-12 bg-gradient-to-b from-white to-gray-50 shadow-lg rounded-lg">
-            <div className="w-full px-4 sm:px-6 md:px-10 lg:px-20 grid grid-cols-1 lg:grid-cols-1 gap-6 items-start">
+        <section
+            id={id}
+            style={containerStyle}
+            className="bg-gradient-to-b from-white to-gray-50 shadow-lg rounded-lg"
+            ref={featuresRef}
+        >
+            <div className="w-full px-4 sm:px-6 md:px-10 lg:px-20 grid grid-cols-1 lg:grid-cols-1 gap-16 items-start">
                 {/* Left Section: Form */}
                 <div>
                     <div className="mb-8">
@@ -81,8 +133,14 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                     </div>
 
                     <form className="space-y-4" onSubmit={handleSubmit}>
-                        {error && <div className="text-red-500 text-center font-bold">{error}</div>}
-                        {success && <div className="text-green-700 text-center font-bold">{success}</div>}
+                        {message && (
+                            <div
+                                className={`text-center font-bold ${message.includes("success") ? "text-green-700" : "text-red-500"
+                                    }`}
+                            >
+                                {message}
+                            </div>
+                        )}
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
@@ -141,7 +199,7 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                         <button
                             type="submit"
                             disabled={loading}
-                            className={`w-full bg-green-600 text-white py-2 rounded-md font-bold transition ${loading ? "bg-green-300 cursor-not-allowed" : "hover:bg-green-600"
+                            className={`w-full bg-green-600  text-white py-2 rounded-md font-bold transition ${loading ? "bg-green-300 cursor-not-allowed" : "hover:bg-green-600"
                                 }`}
                         >
                             {loading ? "Sending..." : "Contact"}
@@ -150,7 +208,7 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                 </div>
 
                 {/* Right Section: Company Info */}
-                <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="bg-white p-6  rounded-lg shadow-md">
                     <h2 className="text-2xl sm:text-3xl font-bold text-green-600 mb-4">Information</h2>
                     <p className="text-gray-800 mb-4 flex items-center gap-2">
                         <CiLocationOn className="text-green-600" />
@@ -174,7 +232,6 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                         ></iframe>
                     </div>
                     <div className="flex flex-wrap gap-7 justify-center mt-6">
-
                         <a href="mailto:mail@techtradeegypt.com" aria-label="Contact Us">
                             <AiOutlineMail className="text-gray-800 text-2xl sm:text-3xl hover:text-green-600 transition duration-300" />
                         </a>
@@ -192,7 +249,6 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
                         </a>
                     </div>
                 </div>
-
             </div>
         </section>
     );

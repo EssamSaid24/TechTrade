@@ -1,9 +1,29 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Services: React.FC = () => {
+    const [offset, setOffset] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            setOffset(scrollY); // Update the offset as the user scrolls
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
-        <div className="bg-gray-100 py-16">
+        <div
+            className="bg-gray-100 py-16"
+            style={{
+                transform: `translateY(-${offset * 0.1}px)`, // Move up on scroll
+                transition: "transform 0.1s ease-out", // Smooth animation
+            }}
+        >
             {/* Section Title */}
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-gray-900 mb-2">SERVICES</h2>

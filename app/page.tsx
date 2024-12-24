@@ -12,20 +12,12 @@ export default function Home() {
   return (
     <>
       <div className="w-full">
-        {/* Navbar */}
         <Navbar />
-
-        {/* Banner */}
         <Banner />
-
-        {/* About Section */}
         <About />
         <WhyChooseUs></WhyChooseUs>
-        {/* Remaining Sections */}
         <Services></Services>
-        <div className="h-full">
-          <Contact id={""} />
-        </div>
+        <Contact id={""}  />
         <PartnersSection />
         <Footer />
       </div>
