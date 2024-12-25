@@ -1,7 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-const Services: React.FC = () => {
+interface ServicesProps {
+    id: string;
+}
+
+
+const Services: React.FC <ServicesProps> = ({ id }) => {
     const [offset, setOffset] = useState(0);
 
     useEffect(() => {
@@ -17,10 +22,11 @@ const Services: React.FC = () => {
     }, []);
 
     return (
-        <div
+        <section
+            id={id}
             className="bg-gray-100 py-16"
             style={{
-                transform: `translateY(-${offset * 0.1}px)`, // Move up on scroll
+                transform: `translateY(-${offset * 0.06}px)`, // Move up on scroll
                 transition: "transform 0.1s ease-out", // Smooth animation
             }}
         >
@@ -92,7 +98,7 @@ const Services: React.FC = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

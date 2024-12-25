@@ -5,6 +5,7 @@
 
 body {
   font-family: "Amiri", serif;
+
 }
 @keyframes scroll {
   0% {
@@ -20,6 +21,7 @@ body {
   display: flex;
   width: max-content;
 }
+
 @keyframes scroll {
   from {
     transform: translateX(0);
@@ -28,4 +30,8 @@ body {
     transform: translateX(-50%); /* Scroll by half the duplicated content */
   }
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px; /* Adjust based on your header's height */
 
+}

@@ -28,6 +28,12 @@ const Footer = () => {
                     >
                         About
                     </Link>
+                    <Link
+                        href="/#services"
+                        className="text-slate-100 text-opacity-60 hover:text-black transition duration-300"
+                    >
+                        Services
+                    </Link>
                 </div>
 
                 {/* Logo */}
@@ -81,6 +87,12 @@ const Footer = () => {
                         className="text-slate-100 hover:text-black transition duration-300"
                     >
                         About
+                    </Link>
+                    <Link
+                        href="/#services"
+                        className="text-slate-100 hover:text-black transition duration-300"
+                    >
+                        Services
                     </Link>
                 </div>
 

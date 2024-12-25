@@ -31,7 +31,7 @@ const WhyChooseUs: React.FC = () => {
 
             {/* Content Section */}
             <div
-                className="relative z-10 flex items-center justify-center h-full"
+                className="relative z-10 flex items-center  md:pl-20   h-full"
                 style={{
 
                 }}

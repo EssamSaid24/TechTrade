@@ -72,7 +72,7 @@ const Navbar = () => {
                         About
                     </Link>
                     <Link
-                        href="/#about"
+                        href="/#services"
                         className="text-gray-700 hover:text-black  transition duration-300"
                     >
                         Services

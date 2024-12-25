@@ -14,10 +14,10 @@ export default function Home() {
       <div className="w-full">
         <Navbar />
         <Banner />
-        <About />
+        <About id={"about"} />
         <WhyChooseUs></WhyChooseUs>
-        <Services></Services>
-        <Contact id={""}  />
+        <Services id={"services"} ></Services>
+        <Contact id={"contact"}  />
         <PartnersSection />
         <Footer />
       </div>
