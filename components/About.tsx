@@ -5,7 +5,7 @@ interface AboutProps {
     id: string;
 }
 
-const About: React.FC <AboutProps> = ({id}) => {
+const About: React.FC<AboutProps> = ({ id }) => {
     const [offsetY, setOffsetY] = useState(0);
 
     const handleScroll = () => {
@@ -23,9 +23,7 @@ const About: React.FC <AboutProps> = ({id}) => {
         <section
             id={id}
             className="bg-gray-100 transition-transform duration-300"
-            style={{
-                transform: `translateY(-${Math.min(offsetY * 0.2, 50)}px)`,
-            }}
+
         >
             <div className="px-4 sm:px-6 lg:px-20 py-8 sm:py-12 flex flex-col lg:flex-row items-center gap-8 lg:gap-10">
                 <div className="lg:w-1/2 text-center lg:text-left">
@@ -37,7 +35,9 @@ const About: React.FC <AboutProps> = ({id}) => {
                         With a focus on extensive industry experience and a strong after-sales network supported by skilled engineers, we aim to offer nothing but the best to our clients, ensuring satisfaction and continued trust in the Egyptian market.
                     </p>
                 </div>
-                <div className="xl:w-3/4 flex justify-center items-center">
+                <div style={{
+                    transform: `translateY(${-offsetY * -0.03}px)`, // Adjust this multiplier for stronger or weaker parallax
+                }} className="xl:w-3/4 flex justify-center items-center">
                     <img
                         src="/partsPlane.png"
                         alt="About Us"
