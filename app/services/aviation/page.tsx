@@ -10,88 +10,72 @@ import Slider from '../../../components/Slider';
 
 const partners = [
   { 
-    id: "boeing",
-    name: "Boeing",
-    image: "/10.png",
-    description: "Leading aircraft manufacturer",
+    id: "DunlopAircraftTyres",
+    name: "Dunlop Aircraft Tyres",
+    image: "/20.png",
+    description: "The world's only specialist manufacturer and retreader of aircraft tyres",
     type: 'partner' as const,
     sector: 'aviation' as const,
     fullDescription: "Global aerospace leader specializing in commercial jetliners, defense products, and space systems."
   },
   { 
-    id: "airbus",
-    name: "Airbus",
-    image: "/11.png",
-    description: "Global aerospace pioneer",
+    id: "FokkerServices",
+    name: "Fokker Services",
+    image: "/21.jpeg",
+    description: "Innovative aerospace service provider offering solutions for airlines, OEMs, and MROs.",
     type: 'partner' as const,
     sector: 'aviation' as const,
     fullDescription: "European multinational aerospace corporation known for innovative aircraft design and manufacturing."
   },
   { 
-    id: "rolls-royce",
-    name: "Rolls-Royce",
-    image: "/12.png",
-    description: "Aircraft engine specialist",
+    id: "STSComponentSolutions",
+    name: "STS Component Solutions",
+    image: "/700.png",
+    description: "Global aircraft inventory solutions with 24/7/365 availability.",
     type: 'partner' as const,
     sector: 'aviation' as const,
     fullDescription: "World-renowned manufacturer of aircraft engines and power systems."
   },
   {
-    id: "boeingg",
-    name: "Boeingg",
-    image: "/10.png",
-    description: "Leading aircraft manufacturer",
+    id: "HYCOMAviationSolutions",
+    name: "HYCOM Aviation Solutions",
+    image: "/701.png",
+    description: "Certified supplier of hydraulic equipment for precise aircraft maintenance.",
     type: 'partner' as const,
     sector: 'aviation' as const,
     fullDescription: "Global aerospace leader specializing in commercial jetliners, defense products, and space systems."
-  },
-  { 
-    id: "airbuss",
-    name: "Airbus",
-    image: "/11.png",
-    description: "Global aerospace pioneer",
-    type: 'partner' as const,
-    sector: 'aviation' as const,
-    fullDescription: "European multinational aerospace corporation known for innovative aircraft design and manufacturing."
-  },
-  { 
-    id: "rolls-roycee",
-    name: "Rolls-Royce",
-    image: "/12.png",
-    description: "Aircraft engine specialist",
-    type: 'partner' as const,
-    sector: 'aviation' as const,
-    fullDescription: "World-renowned manufacturer of aircraft engines and power systems."
   }
+
 ];
 
 const customers = [
   { 
-    id: "egypt-air",
-    name: "Egypt Air",
-    image: "/7.jpeg",
-    description: "National carrier of Egypt",
+    id: "airmaster",
+    name: "air master",
+    image: "/airmaster.png",
+    description: "Newly established non-scheduled Airline planning to commence charter Cargo operations ",
     type: 'customer' as const,
     sector: 'aviation' as const,
-    fullDescription: "Egypt's flagship carrier with a modern fleet serving destinations worldwide."
+    fullDescription: "Our operations coverage encompasses the Arab World, Europe, UK, North America, the Asia Pacific Region, Africa, and CIS. With flexibility, faster turnaround times, fast-track to-market, count on Airmaster expertise and wide range of solutions to manage all your air import and export needs.",
+  },
+
+  { 
+    id: "redseaairline",
+    name: "Red Sea Airline",
+    image: "/redseaairline.png",
+    description: "Egypt's leading airline since 2021, offering both scheduled and charter flights that connect you to Egypt's rich culture and stunning landscapes.",
+    type: 'customer' as const,
+    sector: 'aviation' as const,
+    fullDescription: "Welcome to Red Sea Airlines, Egypt's leading airline since 2021, offering both scheduled and charter flights that connect you to Egypt's rich culture and stunning landscapes. Our experienced team, including cabin crew, pilots, and ground staff, is passionate about providing a seamless and safe travel experience, ensuring every journey with us is memorable."
   },
   { 
-    id: "air-cairo",
-    name: "Air Cairo",
-    image: "/8.jpeg",
-    description: "Leading regional airline",
+    id: "redseaairline",
+    name: "Red Sea Airline",
+    image: "/redseaairline.png",
+    description: "Egypt's leading airline since 2021, offering both scheduled and charter flights that connect you to Egypt's rich culture and stunning landscapes.",
     type: 'customer' as const,
     sector: 'aviation' as const,
-    fullDescription: "Major regional airline connecting Egypt with key destinations in the Middle East and Europe."
-  },
-  { 
-    id: "alexandria-airlines",
-    name: "Alexandria Airlines",
-    image: "/9.jpeg",
-    description: "Private aviation leader",
-    type: 'customer' as const,
-    sector: 'aviation' as const,
-    fullDescription: "Premier private aviation service provider in Egypt."
+    fullDescription: "Welcome to Red Sea Airlines, Egypt's leading airline since 2021, offering both scheduled and charter flights that connect you to Egypt's rich culture and stunning landscapes. Our experienced team, including cabin crew, pilots, and ground staff, is passionate about providing a seamless and safe travel experience, ensuring every journey with us is memorable."
   }
 ];
 

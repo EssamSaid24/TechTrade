@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Link from 'next/link';
@@ -22,16 +22,15 @@ export default function Slider({ items, title }: SliderProps) {
     const [startIndex, setStartIndex] = useState(0);
     const visibleCount = 3;
 
+    // Duplicate the items to create a seamless loop
+    const duplicatedItems = [...items, ...items, ...items];
+
     const handleNext = () => {
-        if (startIndex + visibleCount < items.length) {
-            setStartIndex((prev) => prev + 1);
-        }
+        setStartIndex((prev) => (prev + 1) % items.length);
     };
 
     const handlePrevious = () => {
-        if (startIndex > 0) {
-            setStartIndex((prev) => prev - 1);
-        }
+        setStartIndex((prev) => (prev - 1 + items.length) % items.length);
     };
 
     return (
@@ -44,10 +43,7 @@ export default function Slider({ items, title }: SliderProps) {
                     {/* Left Button */}
                     <button
                         onClick={handlePrevious}
-                        disabled={startIndex === 0}
-                        className={`absolute left-0 top-1/2 transform -translate-y-1/2 bg-green-600 text-white p-3 rounded-full shadow-md transition-all ${
-                            startIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-green-700'
-                        }`}
+                        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-green-600 text-white p-3 rounded-full shadow-md transition-all hover:bg-green-700"
                     >
                         <FaChevronLeft />
                     </button>
@@ -60,9 +56,9 @@ export default function Slider({ items, title }: SliderProps) {
                             animate={{ x: -startIndex * (100 / visibleCount) + '%' }}
                             transition={{ type: 'tween', duration: 0.5 }}
                         >
-                            {items.map((item) => (
-                                <div key={item.id} className="flex-none w-1/3">
-                                    <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center cursor-pointer hover:shadow-2xl transition-shadow">
+                            {duplicatedItems.slice(startIndex, startIndex + visibleCount * 2).map((item, index) => (
+                                <div key={`${item.id}-${index}`} className="flex-none w-1/3">
+                                    <div className="bg-white rounded-lg shadow-lg p-6 m-4 flex flex-col items-center cursor-pointer hover:shadow-2xl transition-shadow">
                                         <Link href={`/${item.sector}/${item.type}/${item.id}`} className="block h-full w-full text-center">
                                             <div className="relative w-full h-40 mb-4">
                                                 <Image
@@ -86,10 +82,7 @@ export default function Slider({ items, title }: SliderProps) {
                     {/* Right Button */}
                     <button
                         onClick={handleNext}
-                        disabled={startIndex + visibleCount >= items.length}
-                        className={`absolute right-0 top-1/2 transform -translate-y-1/2 bg-green-600 text-white p-3 rounded-full shadow-md transition-all ${
-                            startIndex + visibleCount >= items.length ? 'opacity-50 cursor-not-allowed' : 'hover:bg-green-700'
-                        }`}
+                        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-green-600 text-white p-3 rounded-full shadow-md transition-all hover:bg-green-700"
                     >
                         <FaChevronRight />
                     </button>

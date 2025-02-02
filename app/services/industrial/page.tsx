@@ -8,88 +8,98 @@ import { FaIndustry, FaCogs, FaWrench, FaChartLine } from 'react-icons/fa';
 import Slider from '../../../components/Slider';
 
 const partners = [
+
   { 
-    id: "boeing",
-    name: "Boeing",
-    image: "/10.png",
-    description: "Leading aircraft manufacturer",
+    id: "Chemvulc",
+    name: "CHEMVULC",
+    image: "/16.png",
+    description: "Manufacturer of durable rubber products for heavy industry and mining.",
     type: 'partner' as const,
-    sector: 'aviation' as const,
-    fullDescription: "Global aerospace leader specializing in commercial jetliners, defense products, and space systems."
-  },
-  { 
-    id: "airbus",
-    name: "Airbus",
-    image: "/11.png",
-    description: "Global aerospace pioneer",
-    type: 'partner' as const,
-    sector: 'aviation' as const,
+    sector: 'industrial' as const,
     fullDescription: "European multinational aerospace corporation known for innovative aircraft design and manufacturing."
   },
   { 
-    id: "rolls-royce",
-    name: "Rolls-Royce",
+    id: "MullerBeltex",
+    name: "Muller Beltex",
     image: "/12.png",
-    description: "Aircraft engine specialist",
+    description: "Specialized in FDA white belts, bucket elevators, and PVC belts for various industries.",
     type: 'partner' as const,
-    sector: 'aviation' as const,
+    sector: 'industrial' as const,
     fullDescription: "World-renowned manufacturer of aircraft engines and power systems."
   },
   {
-    id: "boeingg",
-    name: "Boeingg",
-    image: "/10.png",
-    description: "Leading aircraft manufacturer",
+    id: "DunlopConveyorBelting",
+    name: "Dunlop Conveyor Belting",
+    image: "/900.png",
+    description: "Worldwide conveyor solutions with high-quality, durable conveyor belts.",
     type: 'partner' as const,
-    sector: 'aviation' as const,
+    sector: 'industrial' as const,
     fullDescription: "Global aerospace leader specializing in commercial jetliners, defense products, and space systems."
   },
   { 
-    id: "airbuss",
-    name: "Airbus",
+    id: "Gurtec",
+    name: "Gurtec",
     image: "/11.png",
-    description: "Global aerospace pioneer",
+    description: "Manufacturer of high-quality conveyor rollers, drums, and idlers.",
     type: 'partner' as const,
-    sector: 'aviation' as const,
-    fullDescription: "European multinational aerospace corporation known for innovative aircraft design and manufacturing."
+    sector: 'industrial' as const,
+    fullDescription: "With over 100 years of experience, Gurtec specializes in developing and manufacturing top-quality conveyor components. The product range includes a variety of rollers, from standard belt conveyor rollers to shaft-free, rubber disk return, rubber impact, and aluminum rollers. Gurtec also provides complete frame and roller assemblies, available in painted or hot-galvanized finishes, for belt widths ranging from 350 to over 3200 mm. Additionally, the company offers a wide selection of light, medium, and heavy-duty pulleys, along with a reliable primary belt cleaner designed for light to heavy-duty conveyors, ensuring easy installation at the drive end.",
+  },  
+  { 
+    id: "DustSolutionsIncorporated",
+    name: "Dust Solutions Incorporated (DSI)",
+    image: "/10.png",
+    description: "Manufacturer of dust suppression systems for a variety of industries.",
+    type: 'partner' as const,
+    sector: 'industrial' as const,
+    fullDescription: "Global aerospace leader specializing in commercial jetliners, defense products, and space systems."
   },
   { 
-    id: "rolls-roycee",
-    name: "Rolls-Royce",
-    image: "/12.png",
-    description: "Aircraft engine specialist",
+    id: "DCLInc",
+    name: "DCL",
+    image: "/13.png",
+    description: "Leader in dry bulk loading equipment manufacturing since 1981.",
     type: 'partner' as const,
-    sector: 'aviation' as const,
+    sector: 'industrial' as const,
     fullDescription: "World-renowned manufacturer of aircraft engines and power systems."
   }
 ];
 const customers = [
   { 
-    id: "egypt-air",
-    name: "Egypt Air",
-    image: "/7.jpeg",
-    description: "National carrier of Egypt",
+    id: "EzzSteel",
+    name: "Ezz Steel",
+    image: "/901.png",
+    description: "Largest independent steel producer in the Middle East and North Africa.",
     type: 'customer' as const,
-    sector: 'aviation' as const,
+    sector: 'industrial' as const,
     fullDescription: "Egypt's flagship carrier with a modern fleet serving destinations worldwide."
   },
   { 
-    id: "air-cairo",
-    name: "Air Cairo",
-    image: "/8.jpeg",
-    description: "Leading regional airline",
+    id: "CEMEX",
+    name: "CEMEX",
+    image: "/CEMEX.png",
+    description: "Global leader in the industry with nearly 46,500 employees worldwide.",
     type: 'customer' as const,
-    sector: 'aviation' as const,
+    sector: 'industrial' as const,
     fullDescription: "Major regional airline connecting Egypt with key destinations in the Middle East and Europe."
   },
   { 
-    id: "alexandria-airlines",
-    name: "Alexandria Airlines",
-    image: "/9.jpeg",
-    description: "Private aviation leader",
+    id: "NileSugar",
+    name: "Nile Sugar",
+    image: "/nilesugar-removebg-preview.png",
+    description: "Leading beetroot sugar extraction and refinery plant in Egypt.",
     type: 'customer' as const,
-    sector: 'aviation' as const,
-    fullDescription: "Premier private aviation service provider in Egypt."
+    sector: 'industrial' as const,
+    fullDescription: "Premier private industrial service provider in Egypt."
+  },
+  { 
+    id: "CanalSugar",
+    name: "Canal Sugar",
+    image: "/canalsugar.png",
+    description: "Egypt's first sugar beet processing plant providing premium white sugar.",
+    type: 'customer' as const,
+    sector: 'industrial' as const,
+    fullDescription: "Premier private industrial service provider in Egypt."
   }
 ];
 
