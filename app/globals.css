@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Karla:ital,wght@0,200..800;1,200..800&family=Reem+Kufi:wght@400..700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/gotham');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: "Amiri", serif;
-
+  font-family: "Gotham", sans-serif;
 }
+
 @keyframes scroll {
   0% {
     transform: translateX(0%);
@@ -22,16 +22,54 @@ body {
   width: max-content;
 }
 
-@keyframes scroll {
+@keyframes fadeIn {
   from {
-    transform: translateX(0);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: translateX(-50%); /* Scroll by half the duplicated content */
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.8s ease-out forwards;
+}
+
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px; /* Adjust based on your header's height */
+  scroll-padding-top: 90px;
+}
 
+.mission-vision-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mission-vision-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.customer-card {
+  transition: all 0.3s ease;
+}
+
+.customer-card:hover {
+  transform: scale(1.05);
 }

@@ -54,7 +54,7 @@ const Footer = () => {
                     {/* Contact Us Link */}
                     <Link
                         href="/#contact"
-                        className="px-4 py-2 text-slate-100 text-opacity-80 font-bold rounded hover:bg-green-600 transition duration-300"
+                        className="px-4 py-2 text-slate-100 text-opacity-80 font-bold rounded hover:bg-gray-900 transition duration-300"
                     >
                         Contact Us
                     </Link>
@@ -101,7 +101,7 @@ const Footer = () => {
 
                     <Link
                         href="/#contact"
-                        className="px-4 py-2 text-slate-100 text-opacity-80 font-bold rounded hover:bg-green-600 transition duration-300"
+                        className="px-4 py-2 text-slate-100 text-opacity-80 font-bold rounded hover:bg-gray-700 transition duration-300"
                     >
                         Contact Us
                     </Link>

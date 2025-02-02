@@ -35,11 +35,9 @@ const Banner: React.FC = () => {
             {/* Content */}
             <div className="relative z-10 flex flex-col justify-center items-center h-full text-center text-white">
                 <h1 className="text-5xl font-bold drop-shadow-lg">
-                    The purpose of business
-                </h1>
+                Driving Business Success Through                 </h1>
                 <h2 className="text-3xl font-semibold mt-4 drop-shadow-lg">
-                    is to create and keep a customer
-                </h2>
+                Streamlined Excellence for Aviation & Industrial Needs.                </h2>
             </div>
         </div>
     );

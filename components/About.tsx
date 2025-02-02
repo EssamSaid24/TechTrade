@@ -5,7 +5,7 @@ interface AboutProps {
     id: string;
 }
 
-const About: React.FC <AboutProps> = ({id}) => {
+const About: React.FC<AboutProps> = ({ id }) => {
     const [offsetY, setOffsetY] = useState(0);
 
     const handleScroll = () => {
@@ -30,11 +30,24 @@ const About: React.FC <AboutProps> = ({id}) => {
             <div className="px-4 sm:px-6 lg:px-20 py-8 sm:py-12 flex flex-col lg:flex-row items-center gap-8 lg:gap-10">
                 <div className="lg:w-1/2 text-center lg:text-left">
                     <h2 className="text-green-600 text-xl sm:text-2xl md:text-3xl font-bold mb-4">WHO WE ARE</h2>
+                    <h2 className="text-black text-xl sm:text-2xl md:text-3xl font-bold mb-4">FOUNDED IN 1983,</h2>
                     <p className="text-gray-700 text-sm sm:text-base md:text-xl leading-relaxed text-justify">
-                        Tech Trade Egypt has over 15 years of experience in the Egyptian market, backed by more than 35 years of combined expertise. As a sole agent, consultant, and distributor for leading global brands, we serve both the industrial and aviation sectors, offering the highest standards of products and services.
-                        Our team is committed to delivering cost-effective, reliable, and transparent solutions. We work with top manufacturers and provide a streamlined process from initial consultation to final delivery. We handle all logistics, including shipping, delivery, installation, and after-sales services, ensuring a smooth and efficient experience from start to finish.
-
-                        With a focus on extensive industry experience and a strong after-sales network supported by skilled engineers, we aim to offer nothing but the best to our clients, ensuring satisfaction and continued trust in the Egyptian market.
+                        We are a leading consultant agency working in
+                        various fields providing state of the art solutions to
+                        keep your operations uninterrupted.
+                        We have experienced team with vast experiencethat
+                        is happy to assist you with your needs and solutions
+                        for both industries with a strong focus on customer
+                        satisfaction,we strive to provide innovative solutions
+                        and excellent service to our clients.
+                        With decades of experience in the industry, we have
+                        established ourselves as the sole agent/distributor
+                        and consultant for some of the most trusted and
+                        reputable brands in the world. Additionally, and due
+                        to our vast experience in the region we specialize in
+                        providing cost-effective and reliable equipment
+                        solutions to businesses in both the aviation and
+                        industrial sectors alike.
                     </p>
                 </div>
                 <div className="xl:w-3/4 flex justify-center items-center">

@@ -22,18 +22,18 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
     const [scrollOffset, setScrollOffset] = useState(0);
     const featuresRef = useRef<HTMLDivElement | null>(null);
 
-    useEffect(() => {
-        // Scroll listener to track the scroll position
-        const handleScroll = () => {
-            const scrollY = window.scrollY;
-            setScrollOffset(scrollY); // Update scroll position
-        };
+    // useEffect(() => {
+    //     // Scroll listener to track the scroll position
+    //     const handleScroll = () => {
+    //         const scrollY = window.scrollY;
+    //         setScrollOffset(scrollY); // Update scroll position
+    //     };
 
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
+    //     window.addEventListener("scroll", handleScroll);
+    //     return () => {
+    //         window.removeEventListener("scroll", handleScroll);
+    //     };
+    // }, []);
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
