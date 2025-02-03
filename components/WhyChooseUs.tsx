@@ -1,14 +1,16 @@
 "use client";
-import { FaStar, FaHandshake, FaLightbulb } from 'react-icons/fa';
+import { FaIndustry, FaHandshake, FaShieldAlt, FaCogs } from 'react-icons/fa';
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { FaMoneyBillTrendUp } from "react-icons/fa6";
+
 
 const WhyChooseUs: React.FC = () => {
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
     const values = [
         {
-            icon: <FaStar />, 
+            icon: <FaIndustry />, 
             title: "Extensive Industry Experience", 
             description: "With over 30 years of experience, we offer expert guidance and solutions in the aviation and industrial sectors."
         },
@@ -18,17 +20,17 @@ const WhyChooseUs: React.FC = () => {
             description: "Our global partnerships with leading brands provide clients with top-quality equipment and services, while ensuring market exposure and regulatory compliance for affiliates."
         },
         {
-            icon: <FaLightbulb />, 
+            icon: <FaMoneyBillTrendUp />, 
             title: "Cost-Effectiveness", 
             description: "We deliver cost-effective solutions by leveraging our network and sole distributor/agent status to secure the best equipment at competitive prices."
         },
         {
-            icon: <FaStar />, 
+            icon: <FaShieldAlt />, 
             title: "Reliability and Transparency", 
             description: "Transparency, trust, and reliability are core to our operations, fostering long-term relationships."
         },
         {
-            icon: <FaHandshake />, 
+            icon: <FaCogs />, 
             title: "Streamlined Process", 
             description: "Our streamlined process ensures a hassle-free experience from consultation to installation, saving time and effort."
         }
