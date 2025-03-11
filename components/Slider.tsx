@@ -77,79 +77,77 @@ export default function Slider({ items, title }: SliderProps) {
     };
 
     return (
-        <div className="relative max-w-6xl mx-auto py-12 px-4 md:px-6">
+        <div className="relative max-w-6xl mx-auto py-12">
             <h2 className="text-3xl font-bold text-center mb-8">{title}</h2>
 
-            <div className="relative overflow-hidden">
-                <div className="flex items-center justify-between">
-                    {/* Navigation Buttons */}
-                    <button
-                        onClick={handlePrevious}
-                        disabled={startIndex === 0}
-                        className={`absolute left-2 z-10 p-2 rounded-full bg-white shadow-lg transition-all
-                            ${startIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'}`}
-                    >
-                        <FaChevronLeft className="w-6 h-6 text-gray-700" />
-                    </button>
+            <div className="relative overflow-hidden px-12">
+                {/* Navigation Buttons */}
+                <button
+                    onClick={handlePrevious}
+                    disabled={startIndex === 0}
+                    className={`absolute left-0 z-10 p-2 rounded-full bg-white shadow-lg transition-all top-1/2 -translate-y-1/2
+                        ${startIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'}`}
+                >
+                    <FaChevronLeft className="w-6 h-6 text-gray-700" />
+                </button>
 
-                    {/* Slider Content */}
-                    <div 
-                        className="w-full overflow-hidden px-4"
-                        onTouchStart={handleTouchStart}
-                        onTouchMove={handleTouchMove}
-                        onTouchEnd={handleTouchEnd}
+                {/* Slider Content */}
+                <div 
+                    className="overflow-hidden"
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                >
+                    <motion.div
+                        className="flex"
+                        initial={false}
+                        animate={{ 
+                            x: `-${(startIndex * 100) / visibleCount}%`
+                        }}
+                        transition={{ 
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 30
+                        }}
                     >
-                        <motion.div
-                            className="flex gap-6"
-                            initial={false}
-                            animate={{ 
-                                x: `-${(startIndex * 100) / visibleCount}%`
-                            }}
-                            transition={{ 
-                                type: "spring",
-                                stiffness: 300,
-                                damping: 30
-                            }}
-                        >
-                            {items.map((item) => (
-                                <div 
-                                    key={item.id} 
-                                    className={`flex-none ${
-                                        visibleCount === 1 ? 'w-full' : 
-                                        visibleCount === 2 ? 'w-1/2' : 
-                                        'w-1/3'
-                                    }`}
-                                >
-                                    <div className="bg-white rounded-lg shadow-lg p-6 m-2 hover:shadow-xl transition-shadow duration-300">
-                                        <div 
-                                            className="w-full h-48 mb-4 bg-center bg-no-repeat bg-contain rounded-lg"
-                                            style={{ backgroundImage: `url(${item.image})` }}
-                                        />
-                                        <h3 className="text-xl font-bold mb-2">{item.name}</h3>
-                                        <p className="text-gray-600">{item.description}</p>
-                                        {item.sector !== 'aviation' && (
-                                            <button 
-                                                onClick={() => window.location.href = `/${item.sector}/${item.type}/${item.id}`}
-                                                className="mt-4 text-green-600 hover:text-green-700 font-medium"
-                                            >
-                                                Learn more →
-                                            </button>
-                                        )}
-                                    </div>
+                        {items.map((item) => (
+                            <div 
+                                key={item.id} 
+                                className={`flex-none px-2 ${
+                                    visibleCount === 1 ? 'w-full' : 
+                                    visibleCount === 2 ? 'w-1/2' : 
+                                    'w-1/3'
+                                }`}
+                            >
+                                <div className="bg-white rounded-lg shadow-lg p-6 mx-auto hover:shadow-xl transition-shadow duration-300">
+                                    <div 
+                                        className="w-full h-48 mb-4 bg-center bg-no-repeat bg-contain rounded-lg"
+                                        style={{ backgroundImage: `url(${item.image})` }}
+                                    />
+                                    <h3 className="text-xl font-bold mb-2">{item.name}</h3>
+                                    <p className="text-gray-600">{item.description}</p>
+                                    {item.sector !== 'aviation' && (
+                                        <button 
+                                            onClick={() => window.location.href = `/${item.sector}/${item.type}/${item.id}`}
+                                            className="mt-4 text-green-600 hover:text-green-700 font-medium"
+                                        >
+                                            Learn more →
+                                        </button>
+                                    )}
                                 </div>
-                            ))}
-                        </motion.div>
-                    </div>
-
-                    <button
-                        onClick={handleNext}
-                        disabled={startIndex >= items.length - visibleCount}
-                        className={`absolute right-2 z-10 p-2 rounded-full bg-white shadow-lg transition-all
-                            ${startIndex >= items.length - visibleCount ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'}`}
-                    >
-                        <FaChevronRight className="w-6 h-6 text-gray-700" />
-                    </button>
+                            </div>
+                        ))}
+                    </motion.div>
                 </div>
+
+                <button
+                    onClick={handleNext}
+                    disabled={startIndex >= items.length - visibleCount}
+                    className={`absolute right-0 z-10 p-2 rounded-full bg-white shadow-lg transition-all top-1/2 -translate-y-1/2
+                        ${startIndex >= items.length - visibleCount ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'}`}
+                >
+                    <FaChevronRight className="w-6 h-6 text-gray-700" />
+                </button>
             </div>
         </div>
     );
