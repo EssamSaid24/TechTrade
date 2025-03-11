@@ -8,52 +8,52 @@ import { motion } from 'framer-motion';
 import { FaPlane, FaTools, FaShieldAlt, FaCog } from 'react-icons/fa';
 import Slider from '../../../components/Slider';
 
-const partners = [
-  { 
-    id: "DunlopAircraftTyres",
-    name: "Dunlop Aircraft Tyres",
-    image: "/20.png",
-    description: "The world's only specialist manufacturer and retreader of aircraft tyres",
-    type: 'partner' as const,
-    sector: 'aviation' as const,
-    fullDescription: "Global aerospace leader specializing in commercial jetliners, defense products, and space systems."
-  },
-  { 
-    id: "FokkerServices",
-    name: "Fokker Services",
-    image: "/21.jpeg",
-    description: "Innovative aerospace service provider offering solutions for airlines, OEMs, and MROs.",
-    type: 'partner' as const,
-    sector: 'aviation' as const,
-    fullDescription: "European multinational aerospace corporation known for innovative aircraft design and manufacturing."
-  },
-  { 
-    id: "STSComponentSolutions",
-    name: "STS Component Solutions",
-    image: "/700.png",
-    description: "Global aircraft inventory solutions with 24/7/365 availability.",
-    type: 'partner' as const,
-    sector: 'aviation' as const,
-    fullDescription: "World-renowned manufacturer of aircraft engines and power systems."
-  },
-  {
-    id: "HYCOMAviationSolutions",
-    name: "HYCOM Aviation Solutions",
-    image: "/701.png",
-    description: "Certified supplier of hydraulic equipment for precise aircraft maintenance.",
-    type: 'partner' as const,
-    sector: 'aviation' as const,
-    fullDescription: "Global aerospace leader specializing in commercial jetliners, defense products, and space systems."
-  }
+// const partners = [
+//   { 
+//     id: "DunlopAircraftTyres",
+//     name: "Dunlop Aircraft Tyres",
+//     image: "/20.png",
+//     description: "The world's only specialist manufacturer and retreader of aircraft tyres",
+//     type: 'partner' as const,
+//     sector: 'aviation' as const,
+//     fullDescription: "Global aerospace leader specializing in commercial jetliners, defense products, and space systems."
+//   },
+//   { 
+//     id: "FokkerServices",
+//     name: "Fokker Services",
+//     image: "/21.jpeg",
+//     description: "Innovative aerospace service provider offering solutions for airlines, OEMs, and MROs.",
+//     type: 'partner' as const,
+//     sector: 'aviation' as const,
+//     fullDescription: "European multinational aerospace corporation known for innovative aircraft design and manufacturing."
+//   },
+//   { 
+//     id: "STSComponentSolutions",
+//     name: "STS Component Solutions",
+//     image: "/700.png",
+//     description: "Global aircraft inventory solutions with 24/7/365 availability.",
+//     type: 'partner' as const,
+//     sector: 'aviation' as const,
+//     fullDescription: "World-renowned manufacturer of aircraft engines and power systems."
+//   },
+//   {
+//     id: "HYCOMAviationSolutions",
+//     name: "HYCOM Aviation Solutions",
+//     image: "/701.png",
+//     description: "Certified supplier of hydraulic equipment for precise aircraft maintenance.",
+//     type: 'partner' as const,
+//     sector: 'aviation' as const,
+//     fullDescription: "Global aerospace leader specializing in commercial jetliners, defense products, and space systems."
+//   }
 
-];
+// ];
 
 const customers = [
   { 
     id: "airmaster",
     name: "air master",
     image: "/airmaster.png",
-    description: "Newly established non-scheduled Airline planning to commence charter Cargo operations ",
+    description: "",
     type: 'customer' as const,
     sector: 'aviation' as const,
     fullDescription: "Our operations coverage encompasses the Arab World, Europe, UK, North America, the Asia Pacific Region, Africa, and CIS. With flexibility, faster turnaround times, fast-track to-market, count on Airmaster expertise and wide range of solutions to manage all your air import and export needs.",
@@ -63,7 +63,7 @@ const customers = [
     id: "redseaairline",
     name: "Red Sea Airline",
     image: "/redseaairline.png",
-    description: "Egypt's leading airline since 2021, offering both scheduled and charter flights that connect you to Egypt's rich culture and stunning landscapes.",
+    description: "",
     type: 'customer' as const,
     sector: 'aviation' as const,
     fullDescription: "Welcome to Red Sea Airlines, Egypt's leading airline since 2021, offering both scheduled and charter flights that connect you to Egypt's rich culture and stunning landscapes. Our experienced team, including cabin crew, pilots, and ground staff, is passionate about providing a seamless and safe travel experience, ensuring every journey with us is memorable."
@@ -72,7 +72,7 @@ const customers = [
     id: "AirCairo",
     name: "Air Cairo",
     image: "/Aircairo.png",
-    description: "Authentic, affordable, and accessible airline connecting the world through Cairo.",
+    description: "",
     type: 'customer' as const,
     sector: 'aviation' as const,
     fullDescription: "Air Cairo, founded in October 2003, is an Egyptian hybrid airline that connects passengers globally under its wings, symbolizing freedom and warmth. Operating with a fleet of 37 aircraft, including ATR, Embraer, and Airbus A320 models, the airline serves over 200 weekly flights to 50 international and domestic destinations. Air Cairo has successfully transported over 20 million passengers and is known for its authenticity, affordability, and consistent accessibility. The airline is IOSA certified, SAFA-compliant, and a member of EASA/ECDC, ICAO, and IATA. The airline's commitment to excellence is showcased in its updated fleet, including the latest A320 neo models, and a dedication to providing amazing journeys every day.",
@@ -139,9 +139,9 @@ export default function AviationServices() {
       </div>
 
       {/* Partners Section with Slider */}
-      <div className="bg-white  py-16">
+      {/* <div className="bg-white  py-16">
         <Slider items={partners} title="Our Partners" />
-      </div>
+      </div> */}
 
       {/* Customers Section with Slider */}
       <div className="py-16">
