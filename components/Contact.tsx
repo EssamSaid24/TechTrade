@@ -1,6 +1,5 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
-import emailjs from "@emailjs/browser";
 import { FaPhoneAlt, FaWhatsapp, FaLinkedin } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { CiLocationOn } from "react-icons/ci";
@@ -21,19 +20,6 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
     const [showFeatures, setShowFeatures] = useState(false);
     const [scrollOffset, setScrollOffset] = useState(0);
     const featuresRef = useRef<HTMLDivElement | null>(null);
-
-    // useEffect(() => {
-    //     // Scroll listener to track the scroll position
-    //     const handleScroll = () => {
-    //         const scrollY = window.scrollY;
-    //         setScrollOffset(scrollY); // Update scroll position
-    //     };
-
-    //     window.addEventListener("scroll", handleScroll);
-    //     return () => {
-    //         window.removeEventListener("scroll", handleScroll);
-    //     };
-    // }, []);
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -78,136 +64,62 @@ const FormComponent: React.FC<FormProps> = ({ id }) => {
         setFormData({ ...formData, [name]: value });
     };
 
-    const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setLoading(true);
-        setMessage("");
-
-        if (!validateEmail(formData.email)) {
-            setMessage("Please enter a valid email address.");
-            setLoading(false);
-            return;
-        }
-
-        try {
-            await emailjs.send(
-                "your_service_id", // Replace with your EmailJS service ID
-                "your_template_id", // Replace with your EmailJS template ID
-            );
-            setMessage("Message sent successfully!");
-            setFormData({
-                fullName: "",
-                subject: "",
-                email: "",
-                phoneNumber: "",
-                comment: "",
-            });
-        } catch (error) {
-            console.error("EmailJS Error:", error);
-            setMessage("Failed to send message. Please try again later.");
-        } finally {
-            setLoading(false);
-        }
+    const handleWhatsAppClick = () => {
+        const { fullName, phoneNumber, email, comment } = formData;
+        const message = `Hello! My name is ${fullName}. My phone number is ${phoneNumber}, and my email is ${email}. ${comment}`;
+        const encodedMessage = encodeURIComponent(message);
+        const phoneNumberWhatsApp = "201282263319"; // Replace with your company's WhatsApp number
+        window.open(`https://wa.me/${phoneNumberWhatsApp}?text=${encodedMessage}`, "_blank");
     };
 
     return (
-        <section
-            id={id}
-            style={containerStyle}
-            className="bg-gradient-to-b from-white to-gray-50 shadow-lg rounded-lg"
+        <section style={containerStyle}
+            id={id} className="bg-gradient-to-b from-white to-gray-50 shadow-lg rounded-lg"
             ref={featuresRef}
         >
+
             <div className="w-full px-4 sm:px-6 md:px-10 lg:px-20 grid grid-cols-1 lg:grid-cols-1 gap-16 items-start">
-                {/* Left Section: Form */}
                 <div>
-                    <div className="mb-8">
-                        <div className="text-center mb-12">
-                            <h2 className="text-3xl font-bold text-gray-900 mb-2">Contact Us</h2>
-                            <div className="h-1 w-16 bg-green-600 mx-auto"></div>
-                        </div>
-                        <p className="text-lg sm:text-xl text-center text-gray-800">
+                    <div className="mb-8 text-center">
+                        <h2 className="text-3xl font-bold text-gray-900 mb-2">Contact Us</h2>
+                        <div className="h-1 w-16 bg-green-600 mx-auto"></div>
+                        <p className="text-lg sm:text-xl text-gray-800">
                             We'd love to hear from you! Please fill out the form below to get in touch.
                         </p>
                     </div>
 
-                    <form className="space-y-4" onSubmit={handleSubmit}>
+                    <form className="space-y-4">
                         {message && (
-                            <div
-                                className={`text-center font-bold ${message.includes("success") ? "text-green-700" : "text-red-500"
-                                    }`}
-                            >
-                                {message}
-                            </div>
+                            <div className={`text-center font-bold ${message.includes("success") ? "text-green-700" : "text-red-500"}`}>{message}</div>
                         )}
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label className="block text-green-700 font-semibold mb-1">Full Name</label>
-                                <input
-                                    type="text"
-                                    name="fullName"
-                                    placeholder="Enter your full name"
-                                    className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
-                                    value={formData.fullName}
-                                    onChange={handleChange}
-                                    required
-                                />
+                                <input type="text" name="fullName" placeholder="Enter your full name" className="w-full border p-2 rounded-md focus:ring-2 focus:ring-green-700" value={formData.fullName} onChange={handleChange} required />
                             </div>
                             <div>
                                 <label className="block text-green-700 font-semibold mb-1">Phone Number</label>
-                                <input
-                                    type="text"
-                                    name="phoneNumber"
-                                    placeholder="Enter your phone number"
-                                    className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
-                                    value={formData.phoneNumber}
-                                    onChange={handleChange}
-                                    required
-                                />
+                                <input type="text" name="phoneNumber" placeholder="Enter your phone number" className="w-full border p-2 rounded-md focus:ring-2 focus:ring-green-700" value={formData.phoneNumber} onChange={handleChange} required />
                             </div>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label className="block text-green-700 font-semibold mb-1">Email</label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="Enter your email"
-                                    className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    required
-                                />
+                                <input type="email" name="email" placeholder="Enter your email" className="w-full border p-2 rounded-md focus:ring-2 focus:ring-green-700" value={formData.email} onChange={handleChange} required />
                             </div>
                             <div>
                                 <label className="block text-green-700 font-semibold mb-1">Comment</label>
-                                <input
-                                    type="text"
-                                    name="comment"
-                                    placeholder="Enter your comment"
-                                    className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
-                                    value={formData.comment}
-                                    onChange={handleChange}
-                                    required
-                                />
+                                <input type="text" name="comment" placeholder="Enter your comment" className="w-full border p-2 rounded-md focus:ring-2 focus:ring-green-700" value={formData.comment} onChange={handleChange} required />
                             </div>
                         </div>
 
-                        <button
-                            type="submit"
-                            disabled={loading}
-                            className={`w-full bg-green-600  text-white py-2 rounded-md font-bold transition ${loading ? "bg-green-300 cursor-not-allowed" : "hover:bg-green-600"
-                                }`}
-                        >
-                            {loading ? "Sending..." : "Contact"}
+                        <button type="button" onClick={handleWhatsAppClick} className="w-full bg-green-600 text-white py-2 rounded-md font-bold transition hover:bg-green-700">
+                            Contact
                         </button>
                     </form>
                 </div>
-
-                {/* Right Section: Company Info */}
                 <div className="bg-white p-6  rounded-lg shadow-md">
                     <h2 className="text-2xl sm:text-3xl font-bold text-green-600 mb-4">Information</h2>
                     <p className="text-gray-800 mb-4 flex items-center gap-2">
