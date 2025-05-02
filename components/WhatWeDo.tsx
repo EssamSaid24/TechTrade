@@ -7,7 +7,7 @@ const WhatWeDo = () => {
   const activities = [
     {
       icon: <FaCog className="text-4xl" />,
-      title: "Equipment Distribution",
+      title: "Part Distribution",
       description: "Providing high-quality industrial and aviation equipment from leading global manufacturers."
     },
     {

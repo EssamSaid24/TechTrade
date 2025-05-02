@@ -62,6 +62,15 @@ const partners = [
     type: 'partner' as const,
     sector: 'industrial' as const,
     fullDescription: "World-renowned manufacturer of aircraft engines and power systems."
+  },
+  { 
+    id: "MLT",
+    name: "MLT",
+    image: "/14.png",
+    description: "European specialist in conveyor belt splicing, known for its innovative Super-Screw® solution.",
+    type: 'partner' as const,
+    sector: 'industrial' as const,
+    fullDescription: "World-renowned manufacturer of aircraft engines and power systems."
   }
 ];
 const customers = [
@@ -105,9 +114,9 @@ const customers = [
 
 
 const services = [
-  { icon: <FaIndustry />, title: "Heavy Machinery", description: "Industrial-grade equipment" },
-  { icon: <FaCogs />, title: "Automation Systems", description: "Smart factory solutions" },
-  { icon: <FaWrench />, title: "Maintenance Tools", description: "Professional-grade tools" },
+  { icon: <FaIndustry />, title: "Conveying Solutions", description: "All kinds of conveyor belts, rollers, idlers & lagging rubbers" },
+  { icon: <FaCogs />, title: "Dust Suppression System", description: "Wind fences and dryfog system" },
+  { icon: <FaWrench />, title: "Maintenance and Repair Tools", description: "Hot and cold belt vulcanizing, super-screw, mechanical fastners & PPE" },
   { icon: <FaChartLine />, title: "Process Optimization", description: "Efficiency solutions" },
 ];
 

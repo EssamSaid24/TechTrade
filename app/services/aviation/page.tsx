@@ -80,9 +80,9 @@ const customers = [
 ];
 
 const services = [
-  { icon: <FaPlane />, title: "Aircraft Parts", description: "High-quality aircraft components" },
-  { icon: <FaTools />, title: "Maintenance Tools", description: "Specialized aviation tools" },
-  { icon: <FaShieldAlt />, title: "Safety Equipment", description: "Critical safety gear" },
+  { icon: <FaPlane />, title: "Aircraft Parts", description: "Supply, Exchanges & Repairs" },
+  { icon: <FaTools />, title: "Pool Programs", description: "Customized according to your needs" },
+  { icon: <FaShieldAlt />, title: "Landing Gears", description: "Overhauls, Exchanges & Trading" },
   { icon: <FaCog />, title: "Technical Support", description: "24/7 expert assistance" },
 ];
 

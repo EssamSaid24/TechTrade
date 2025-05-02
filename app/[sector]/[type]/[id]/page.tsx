@@ -192,6 +192,18 @@ const data = {
                     "Effective removal of airborne dust particles (PM-10)",
                     "DustTamer Wind Fence Systems for various applications"
                 ]
+            },
+            {
+                id: "MLT",
+                name: "MLT Group",
+                image: "/14.png",
+                description: "MT is a European specialist in conveyor belt splicing, known for its innovative Super-Screw® solution.",
+                fullDescription: "MT is the European leader in conveyor belt splicing solutions, offering innovative technologies designed to simplify and optimize belt maintenance. Their patented MS® fastener allows for easy splicing using screws, making installation quicker and more efficient. MT’s flagship product, Super-Screw®, is a revolutionary, patented splice that significantly reduces downtime and solves common installation challenges. It offers a reliable and durable alternative to traditional belt splicing methods, combining strength, flexibility, and ease of use.",
+                features: [
+                    "The MS® fastener allows for quick, screw-based splicing without specialized BsTools.",
+                    "Super-Screw® is a unique, patented splice offering unmatched performance and reliability.",
+                    "Designed to significantly reduce conveyor system downtime during installation or repair."
+                ]
             }
         ],
         customer: [

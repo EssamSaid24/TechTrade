@@ -35,10 +35,10 @@ const About: React.FC<AboutProps> = ({ id }) => {
                         We are a leading consultant agency working in
                         various fields providing state of the art solutions to
                         keep your operations uninterrupted.
-                        We have experienced team with vast experiencethat
+                        We have experienced team with vast experience that
                         is happy to assist you with your needs and solutions
                         for both industries with a strong focus on customer
-                        satisfaction,we strive to provide innovative solutions
+                        satisfaction, we strive to provide innovative solutions
                         and excellent service to our clients.
                         With decades of experience in the industry, we have
                         established ourselves as the sole agent/distributor
