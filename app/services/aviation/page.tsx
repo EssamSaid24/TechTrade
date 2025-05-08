@@ -49,7 +49,7 @@ import Slider from '../../../components/Slider';
 // ];
 
 const customers = [
-  { 
+  {
     id: "airmaster",
     name: "air master",
     image: "/airmaster.png",
@@ -59,7 +59,7 @@ const customers = [
     fullDescription: "Our operations coverage encompasses the Arab World, Europe, UK, North America, the Asia Pacific Region, Africa, and CIS. With flexibility, faster turnaround times, fast-track to-market, count on Airmaster expertise and wide range of solutions to manage all your air import and export needs.",
   },
 
-  { 
+  {
     id: "redseaairline",
     name: "Red Sea Airline",
     image: "/redseaairline.png",
@@ -68,7 +68,7 @@ const customers = [
     sector: 'aviation' as const,
     fullDescription: "Welcome to Red Sea Airlines, Egypt's leading airline since 2021, offering both scheduled and charter flights that connect you to Egypt's rich culture and stunning landscapes. Our experienced team, including cabin crew, pilots, and ground staff, is passionate about providing a seamless and safe travel experience, ensuring every journey with us is memorable."
   },
-  { 
+  {
     id: "AirCairo",
     name: "Air Cairo",
     image: "/Aircairo.png",
@@ -76,7 +76,53 @@ const customers = [
     type: 'customer' as const,
     sector: 'aviation' as const,
     fullDescription: "Air Cairo, founded in October 2003, is an Egyptian hybrid airline that connects passengers globally under its wings, symbolizing freedom and warmth. Operating with a fleet of 37 aircraft, including ATR, Embraer, and Airbus A320 models, the airline serves over 200 weekly flights to 50 international and domestic destinations. Air Cairo has successfully transported over 20 million passengers and is known for its authenticity, affordability, and consistent accessibility. The airline is IOSA certified, SAFA-compliant, and a member of EASA/ECDC, ICAO, and IATA. The airline's commitment to excellence is showcased in its updated fleet, including the latest A320 neo models, and a dedication to providing amazing journeys every day.",
-  }
+  },
+  {
+    id: "Egypt Air",
+    name: "Egypt Air",
+    image: "/EgyptAir-Logo.wine.png",
+    description: "",
+    fullDescription: "EgyptAir",
+    type: 'customer' as const,
+    sector: 'aviation' as const,
+  }, 
+  {
+    id: "Nile Air",
+    name: "Nile Air",
+    image: "/AirNile.png",
+    description: "",
+    fullDescription: "",
+    type: 'customer' as const,
+    sector: 'aviation' as const,
+  }, 
+  {
+    id: "Nemsa_Airlines_Logo.png",
+    name: "Nemsa Airlines",
+    image: "/Nemsa_Airlines_Logo.png",
+    description: "",
+    fullDescription: "",
+    type: 'customer' as const,
+    sector: 'aviation' as const,
+  }, 
+  {
+    id: "Egyptian_Air_Force_emblem",
+    name: "Egyptian Air Force",
+    image: "/Egyptian_Air_Force_emblem.png",
+    description: "",
+    fullDescription: "",
+    type: 'customer' as const,
+    sector: 'aviation' as const,
+  }, 
+  {
+    id: "AMC",
+    name: "AMC",
+    image: "/AMC.png",
+    description: "",
+    fullDescription: "",
+    type: 'customer' as const,
+    sector: 'aviation' as const,
+  }, 
+
 ];
 
 const services = [
@@ -90,9 +136,9 @@ export default function AviationServices() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      
+
       {/* Hero Section */}
-      <motion.div 
+      <motion.div
         className="relative h-[60vh] flex items-center justify-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -113,7 +159,7 @@ export default function AviationServices() {
 
       {/* Services Grid */}
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <motion.h2 
+        <motion.h2
           className="text-3xl font-bold text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

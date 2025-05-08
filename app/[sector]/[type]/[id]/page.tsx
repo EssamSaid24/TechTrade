@@ -101,6 +101,33 @@ const data = {
                 fullDescription: "Air Cairo, founded in October 2003, is an Egyptian hybrid airline that connects passengers globally under its wings, symbolizing freedom and warmth. Operating with a fleet of 37 aircraft, including ATR, Embraer, and Airbus A320 models, the airline serves over 200 weekly flights to 50 international and domestic destinations. Air Cairo has successfully transported over 20 million passengers and is known for its authenticity, affordability, and consistent accessibility. The airline is IOSA certified, SAFA-compliant, and a member of EASA/ECDC, ICAO, and IATA. The airline's commitment to excellence is showcased in its updated fleet, including the latest A320 neo models, and a dedication to providing amazing journeys every day.",
                 features: [
                 ]
+            },
+            {
+                id: "Egypt Air",
+                name: "Egypt Air",
+                image: "/EgyptAir-Logo.wine.png",
+                description: "",
+                fullDescription: "",
+                features: [
+                ]
+            },
+            {
+                id: "Nile Air",
+                name: "Nile Air",
+                image: "/AirNile.png",
+                description: "",
+                fullDescription: "",
+                features: [
+                ]
+            },
+            {
+                id: "Nemsa Airlines",
+                name: "Nemsa Airlines",
+                image: "/Nemsa_Airlines_Logo.png",
+                description: "",
+                fullDescription: "",
+                features: [
+                ]
             }
             
             // ... Add other aviation customers
@@ -253,7 +280,16 @@ const data = {
                 fullDescription: "The first sugar beet processing plant in Egypt, this facility provides up to 45% of its feedstock from its own farm. The company is dedicated to achieving the world’s highest potential yield of sugar beet by implementing the latest farming practices and modern technology, while also providing agronomic guidance to neighboring farms. The plant produces premium white sugar, which is stored in the world’s largest conditioning silo. At full capacity, the plant’s production will bridge the entire gap between local sugar consumption and production in Egypt.",
                 features: [
                 ]
-            }
+            },
+            {
+                id: "TITAN",
+                name: "Titan",
+                image: "/Titan.jpg",
+                description: "High-quality cement and concrete, contributing to sustainable construction and development across Egypt.",
+                fullDescription: "TITAN Cement Egypt (TCE) is a leading producer of cement and concrete, committed to delivering durable and sustainable building materials tailored to modern societal needs. With operations in key regions—two cement plants in Beni Suef and Alexandria, four ready-mix units in Giza and Damietta, and an aggregate plant in Suez—TCE plays a pivotal role in Egypt’s construction industry. As part of the international TITAN Group, TCE leverages global expertise and resources to create sustainable value economically, environmentally, and socially. The Group operates cement production facilities in 10 countries, has a presence in over 15, and employs around 5,500 people worldwide. TITAN Group’s parent company, TITAN Cement International (TCI), is publicly listed and headquartered in Brussels with management operations based in Cyprus.",
+                features: [
+                ]
+            },
         ]
     }
 };

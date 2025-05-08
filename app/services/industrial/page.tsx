@@ -47,7 +47,7 @@ const partners = [
   },  
   { 
     id: "DustSolutionsIncorporated",
-    name: "Dust Solutions Incorporated (DSI)",
+    name: "DSI",
     image: "/10.png",
     description: "Manufacturer of dust suppression systems for a variety of industries.",
     type: 'partner' as const,
@@ -58,7 +58,7 @@ const partners = [
     id: "DCLInc",
     name: "DCL",
     image: "/13.png",
-    description: "Leader in dry bulk loading equipment manufacturing since 1981.",
+    description: "Leader in dry bulk loading equipment manufacturing.",
     type: 'partner' as const,
     sector: 'industrial' as const,
     fullDescription: "World-renowned manufacturer of aircraft engines and power systems."
@@ -67,7 +67,7 @@ const partners = [
     id: "MLT",
     name: "MLT",
     image: "/14.png",
-    description: "European specialist in conveyor belt splicing, known for its innovative Super-Screw® solution.",
+    description: "European specialist in conveyor belt splicing, its innovative Super-Screw® solution.",
     type: 'partner' as const,
     sector: 'industrial' as const,
     fullDescription: "World-renowned manufacturer of aircraft engines and power systems."
@@ -87,7 +87,7 @@ const customers = [
     id: "CEMEX",
     name: "CEMEX",
     image: "/CEMEX.png",
-    description: "Global leader in the industry with nearly 46,500 employees worldwide.",
+    description: "Global leader in the industry with ~46,500 employees worldwide.",
     type: 'customer' as const,
     sector: 'industrial' as const,
     fullDescription: "Major regional airline connecting Egypt with key destinations in the Middle East and Europe."
@@ -109,7 +109,16 @@ const customers = [
     type: 'customer' as const,
     sector: 'industrial' as const,
     fullDescription: "Premier private industrial service provider in Egypt."
-  }
+  },  
+  { 
+    id: "TITAN",
+    name: "Titan",
+    image: "/Titan.jpg",
+    description: "High-quality cement and concrete, contributing to sustainable construction and development across Egypt.",
+    type: 'customer' as const,
+    sector: 'industrial' as const,
+    fullDescription: "Premier private industrial service provider in Egypt."
+  },
 ];
 
 

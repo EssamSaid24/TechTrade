@@ -119,7 +119,7 @@ export default function Slider({ items, title }: SliderProps) {
                                     'w-1/3'
                                 }`}
                             >
-                                <div className="bg-white rounded-lg shadow-lg p-6 mx-auto hover:shadow-xl transition-shadow duration-300">
+                                <div className="bg-white rounded-lg shadow-lg p-6 mb-4 mx-auto hover:shadow-xl transition-shadow duration-300">
                                     <div 
                                         className="w-full h-48 mb-4 bg-center bg-no-repeat bg-contain rounded-lg"
                                         style={{ backgroundImage: `url(${item.image})` }}

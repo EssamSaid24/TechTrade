@@ -78,7 +78,7 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
                         </div>
                     </div>
                 </Link>
-
+                <Link href="/services/support" className="block">
                 <div className="flex items-center hover:border-4 hover:border-green-600 p-4 rounded-lg transition-all duration-200 bg-white">
                     <div className="w-1/3">
                         <img
@@ -96,6 +96,7 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
                         </p>
                     </div>
                 </div>
+                </Link>
             </div>
         </section>
     );
